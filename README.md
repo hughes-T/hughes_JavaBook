@@ -4,7 +4,7 @@
 
 - [七大设计原则](design_principles/README.md)
 
-- GOF23种设计模式
+- [GOF23种设计模式](design_pattren/README.md)
 
 ### 框架源码
 
@@ -12,3 +12,4 @@
 - mybatis源码
 
 ### 并发编程
+
