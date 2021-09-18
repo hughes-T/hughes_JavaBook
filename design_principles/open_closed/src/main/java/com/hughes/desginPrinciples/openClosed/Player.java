@@ -6,10 +6,9 @@ package com.hughes.desginPrinciples.openClosed;
  */
 public interface Player {
 
-    int getExperience();
-
-    String getName();
-
+    /**
+     * 新增经验
+     */
     void addExperience(int experience);
 
 }
