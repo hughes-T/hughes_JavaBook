@@ -1,83 +1,70 @@
-﻿## 开闭原则 Open-Closed-Principle
+﻿## 里氏替换原则 Liskow_Substitution-Principle
 
 ### 定义
 
-- 对实体的扩展行为开放，对修改行为关闭；
-- 核心思想是面向抽象编程，用抽象构建框架，用实现扩展细节
+- 子类对象能够替换父类对象的任何对方且使得程序不变
 
 ------
 ### 举例
 
-#### 初始场景
+#### 反例场景
 
-玩家 Player 有获得经验的方法addExperience：
+定义长方形，定义正方形为长方形的子类
 
 ```java
-public interface Player {
+@Data
+public class Rectangle {
 
-    /**
-     * 新增经验
-     */
-    void addExperience(int experience);
-    
+    private int width;
+
+    private int high;
 }
 
-@ToString
-public class PlayerImpl implements Player {
+public class Square extends Rectangle{
 
-    private final String name;
-    private int experience;
+    private int length;
 
-    public PlayerImpl(String name) {
-        this.experience = 0;
-        this.name = name;
+    @Override
+    public int getWidth() {
+        return length;
     }
 
     @Override
-    public void addExperience(int experience) {
-        this.experience = this.experience + experience;
+    public void setWidth(int width) {
+       this.length = width;
     }
 
+    @Override
+    public int getHigh() {
+        return length;
+    }
+
+    @Override
+    public void setHigh(int high) {
+        this.length = high;
+    }
 }
 ```
 
-现在新增一个需求，活动期间经验翻倍，那么如果是为了快速实现，于是直接修改addExperience方法：
+直观上说”正方形是特殊的长方形“，但遇到如下resize方法的情况，程序将会陷入死循环
 
 ```java
-public void addExperience(int experience) {
-    this.experience = this.experience + experience * 2;
-}
-```
+   /**
+     * 使得长大于宽
+     */
+    public void resize(Rectangle rectangle){
+        while (rectangle.getHigh() >= rectangle.getWidth()){
+            rectangle.setHigh(rectangle.getHigh() + 1);
+            System.out.println("High:"+ rectangle.getHigh() + " " + "Width:"+ rectangle.getWidth());
+        }
 
-思考一下，修改后的addExperience方法的功能已经失去它原有的意义
-
-#### 场景优化
-
-新增addActiveExperience方法，以遵循开闭原则：
-
-```java
-public class ActivePlayer extends PlayerImpl{
-
-    public ActivePlayer(String name) {
-        super(name);
     }
-
-    public void addActiveExperience(int experience) {
-        super.addExperience(experience * 2);
-    }
-}
 ```
-
-
 
 ------
 
 ### 个人心得
 
-- 开闭原则是面向对象编程最基础的原则，指导我们构建稳定灵活的系统
-- **在面临细节实现时，应当尽量避免修改原来的细节，而是扩展的形式**
-- 这考验一个人对于事物规律总结和归纳的能力，不论是开发还是现实，每一步细节都应以更高的视角去思考、兼顾
-
-
+- 里氏替换原则是为了防止继承泛滥，因为在继承是强耦合的一种关系，当不得已要使用继承时，应当遵从里氏替换原则来防止不可控的风险
 
 

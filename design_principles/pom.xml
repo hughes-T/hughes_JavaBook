@@ -17,6 +17,8 @@
         <module>liskow_substitution</module>
         <module>open_closed</module>
         <module>simple_responsibility</module>
+        <module>law_of_demeter</module>
+        <module>composite_aggregate_reuse</module>
     </modules>
 
     <!-- 父模块统一管理依赖 -->

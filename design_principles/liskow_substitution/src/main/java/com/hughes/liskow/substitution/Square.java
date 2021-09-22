@@ -5,6 +5,7 @@ package com.hughes.liskow.substitution;
  * @since 2021/8/4  13:52
  */
 public class Square extends Rectangle{
+
     private int length;
 
     @Override

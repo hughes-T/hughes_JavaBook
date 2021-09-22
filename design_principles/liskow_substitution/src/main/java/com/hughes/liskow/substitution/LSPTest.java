@@ -17,6 +17,9 @@ public class LSPTest {
         resize(square);
     }
 
+    /**
+     * 使得长大于宽
+     */
     public static void resize(Rectangle rectangle){
         while (rectangle.getHigh() >= rectangle.getWidth()){
             rectangle.setHigh(rectangle.getHigh() + 1);
