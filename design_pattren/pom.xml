@@ -18,11 +18,19 @@
         <module>prototype_pattern</module>
         <module>builder_pattren</module>
         <module>proxy_pattern</module>
+        <module>flyweight_pattren</module>
+        <module>composite_pattern</module>
     </modules>
 
     <!-- 父模块统一管理依赖 -->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.13</version>
+                <scope>test</scope>
+            </dependency>
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>

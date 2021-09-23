@@ -2,9 +2,9 @@
 
 ### 编码思想
 
-- [七大设计原则](design_principles/README.md)
+- [设计原则](design_principles/README.md)
 
-- [GOF23种设计模式](design_pattren/README.md)
+- [设计模式](design_pattren/README.md)
 
 ### 框架源码
 
