@@ -7,7 +7,7 @@ package com.hughes.design.pattren.flyweight.general;
  */
 public class ConcreteFlyweight implements IFlyweight{
 
-    private String innerState;
+    private final String innerState;
 
     public ConcreteFlyweight(String innerState){
         this.innerState = innerState;

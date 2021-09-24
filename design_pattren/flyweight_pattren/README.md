@@ -13,6 +13,51 @@
 - 具体享元角色Concrete Flyweight：享元对象实现，该角色的内部状态处理应于外部状态无关
 - 享元工厂Flyweight Factory： 负责管理享元对象池和创建享元对象
 
+```java
+public interface IFlyweight {
+    void operation(String existState);
+}
+
+public class ConcreteFlyweight implements IFlyweight{
+
+    private final String innerState;
+
+    public ConcreteFlyweight(String innerState){
+        this.innerState = innerState;
+    }
+
+    @Override
+    public void operation(String existState) {
+        System.out.println(String.format("Object Address: %s, innerState: %s, existState: %s",
+                System.identityHashCode(this),this.innerState,existState));
+    }
+}
+
+public class FlyweightFactory {
+
+    private static final Map<String,IFlyweight> pool = new ConcurrentHashMap<>();
+
+    public static IFlyweight getFlyweight(String innerState){
+        if (!pool.containsKey(innerState)){
+            pool.put(innerState,new ConcreteFlyweight(innerState));
+        }
+        return pool.get(innerState);
+    }
+}
+public class Test {
+
+    @Test
+    public void testGetFlyweight(){
+        IFlyweight flyweight = FlyweightFactory.getFlyweight("a");
+        IFlyweight flyweight2 = FlyweightFactory.getFlyweight("a");
+        IFlyweight flyweight3 = FlyweightFactory.getFlyweight("b");
+        flyweight.operation("1");
+        flyweight2.operation("2");
+        flyweight3.operation("3");
+    }
+}
+```
+
 #### 源码应用
 
 JDK中的String：

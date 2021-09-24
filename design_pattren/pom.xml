@@ -20,6 +20,7 @@
         <module>proxy_pattern</module>
         <module>flyweight_pattren</module>
         <module>composite_pattern</module>
+        <module>decorator_pattern</module>
     </modules>
 
     <!-- 父模块统一管理依赖 -->
