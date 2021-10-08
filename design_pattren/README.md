@@ -21,10 +21,10 @@
 
 - 代理模式
 - 门面模式
-- 装饰器模式
+- [装饰器模式](decorator_pattern/README.md)
 - [享元模式](flyweight_pattren/README.md)
 - [组合模式](composite_pattern/README.md)
-- 适配器模式
+- [适配器模式](adapter_pattern/README.md)
 - 桥接模式
 
 ### 行为型
@@ -43,6 +43,9 @@
 
 ### 总结
 学习设计模式在乎其"道"而非"术"，重意而非形。
+- 创建型封装对象的创建过程并提供对象的访问方式
+- 结构型通过中间层灵活控制目标对象，达到对其进行动态的控制、扩展、转换、组合和互相连接的目的
+
 
 
 

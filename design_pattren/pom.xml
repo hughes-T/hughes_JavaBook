@@ -21,6 +21,7 @@
         <module>flyweight_pattren</module>
         <module>composite_pattern</module>
         <module>decorator_pattern</module>
+        <module>adapter_pattern</module>
     </modules>
 
     <!-- 父模块统一管理依赖 -->
