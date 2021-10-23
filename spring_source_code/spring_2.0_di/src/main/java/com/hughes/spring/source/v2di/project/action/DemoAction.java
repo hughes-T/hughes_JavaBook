@@ -1,12 +1,12 @@
-package com.hughes.spring.source.v2mvc.project.action;
+package com.hughes.spring.source.v2di.project.action;
 
 
 
-import com.hughes.spring.source.v2mvc.framework.annotation.GPAutowired;
-import com.hughes.spring.source.v2mvc.framework.annotation.GPController;
-import com.hughes.spring.source.v2mvc.framework.annotation.GPRequestMapping;
-import com.hughes.spring.source.v2mvc.framework.annotation.GPRequestParam;
-import com.hughes.spring.source.v2mvc.project.service.IDemoService;
+import com.hughes.spring.source.v2di.framework.annotation.HAutowired;
+import com.hughes.spring.source.v2di.framework.annotation.HController;
+import com.hughes.spring.source.v2di.framework.annotation.HRequestMapping;
+import com.hughes.spring.source.v2di.framework.annotation.HRequestParam;
+import com.hughes.spring.source.v2di.project.service.IDemoService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,16 +14,19 @@ import java.io.IOException;
 
 
 //虽然，用法一样，但是没有功能
-@GPController
-@GPRequestMapping("/demo")
+@HController
+@HRequestMapping("/demo")
 public class DemoAction {
 
-  	@GPAutowired
+  	@HAutowired
 	private IDemoService demoService;
 
-	@GPRequestMapping("/query")
+  	@HAutowired
+  	private TwoAction twoAction;
+
+	@HRequestMapping("/query")
 	public void query(HttpServletRequest req, HttpServletResponse resp,
-					  @GPRequestParam("name") String name){
+					  @HRequestParam("name") String name){
 //		String result = demoService.get(name);
 		String result = "My name is " + name;
 		try {
@@ -33,9 +36,9 @@ public class DemoAction {
 		}
 	}
 
-	@GPRequestMapping("/add")
+	@HRequestMapping("/add")
 	public void add(HttpServletRequest req, HttpServletResponse resp,
-					@GPRequestParam("a") Integer a, @GPRequestParam("b") Integer b){
+					@HRequestParam("a") Integer a, @HRequestParam("b") Integer b){
 		try {
 			resp.getWriter().write(a + "+" + b + "=" + (a + b));
 		} catch (IOException e) {
@@ -43,9 +46,9 @@ public class DemoAction {
 		}
 	}
 
-	@GPRequestMapping("/sub")
+	@HRequestMapping("/sub")
 	public void sub(HttpServletRequest req, HttpServletResponse resp,
-					@GPRequestParam("a") Double a, @GPRequestParam("b") Double b){
+					@HRequestParam("a") Double a, @HRequestParam("b") Double b){
 		try {
 			resp.getWriter().write(a + "-" + b + "=" + (a - b));
 		} catch (IOException e) {
@@ -53,8 +56,8 @@ public class DemoAction {
 		}
 	}
 
-	@GPRequestMapping("/remove")
-	public String  remove(@GPRequestParam("id") Integer id){
+	@HRequestMapping("/remove")
+	public String  remove(@HRequestParam("id") Integer id){
 		return "" + id;
 	}
 

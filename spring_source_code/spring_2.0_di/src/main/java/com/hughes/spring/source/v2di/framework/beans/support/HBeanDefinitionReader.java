@@ -1,6 +1,6 @@
-package com.hughes.spring.source.v2mvc.framework.beans.support;
+package com.hughes.spring.source.v2di.framework.beans.support;
 
-import com.hughes.spring.source.v2mvc.framework.beans.config.HBeanDefinition;
+import com.hughes.spring.source.v2di.framework.beans.config.HBeanDefinition;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,9 +35,12 @@ public class HBeanDefinitionReader {
                 if (clazz.isInterface()){continue;}
                 //默认首字母大小写
                 String beanName = toLowerFirstCase(clazz.getSimpleName());
+//                String beanName = clazz.getName();
                 //有接口的情况
+
                 for (Class<?> anInterface : clazz.getInterfaces()) {
                     beanName = toLowerFirstCase(anInterface.getSimpleName());
+//                    beanName = anInterface.getName();
                 }
                 result.add(new HBeanDefinition(beanName,className));
             } catch (Exception e) {

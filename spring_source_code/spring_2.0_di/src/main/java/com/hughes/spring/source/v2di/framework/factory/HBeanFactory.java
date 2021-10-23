@@ -1,4 +1,4 @@
-package com.hughes.spring.source.v2mvc.framework.core;
+package com.hughes.spring.source.v2di.framework.factory;
 
 /**
  * IOC容器顶层接口

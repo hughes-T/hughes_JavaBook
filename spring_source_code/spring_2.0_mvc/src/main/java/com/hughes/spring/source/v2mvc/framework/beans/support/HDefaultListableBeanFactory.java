@@ -1,7 +1,7 @@
 package com.hughes.spring.source.v2mvc.framework.beans.support;
 
-import com.hughes.spring.source.v2ioc.framework.beans.config.HBeanDefinition;
-import com.hughes.spring.source.v2ioc.framework.factory.HBeanFactory;
+import com.hughes.spring.source.v2mvc.framework.beans.config.HBeanDefinition;
+import com.hughes.spring.source.v2mvc.framework.factory.HBeanFactory;
 
 import java.util.HashMap;
 import java.util.List;

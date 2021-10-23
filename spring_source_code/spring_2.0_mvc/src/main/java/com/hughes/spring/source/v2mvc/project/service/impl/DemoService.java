@@ -1,8 +1,8 @@
 package com.hughes.spring.source.v2mvc.project.service.impl;
 
 
-import com.hughes.spring.source.v2ioc.framework.annotation.GPService;
-import com.hughes.spring.source.v2ioc.project.service.IDemoService;
+import com.hughes.spring.source.v2mvc.framework.annotation.GPService;
+import com.hughes.spring.source.v2mvc.project.service.IDemoService;
 
 /**
  * 核心业务逻辑
