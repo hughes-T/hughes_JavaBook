@@ -11,15 +11,16 @@ import java.io.IOException;
 
 
 //虽然，用法一样，但是没有功能
-@GPController
-@GPRequestMapping("/demo")
+@HController
+@HRequestMapping("/demo")
 public class DemoAction {
 
-  	@GPAutowired private IDemoService demoService;
+  	@HAutowired
+	private IDemoService demoService;
 
-	@GPRequestMapping("/query")
+	@HRequestMapping("/query")
 	public void query(HttpServletRequest req, HttpServletResponse resp,
-					  @GPRequestParam("name") String name){
+					  @HRequestParam("name") String name){
 //		String result = demoService.get(name);
 		String result = "My name is " + name;
 		try {
@@ -29,9 +30,9 @@ public class DemoAction {
 		}
 	}
 
-	@GPRequestMapping("/add")
+	@HRequestMapping("/add")
 	public void add(HttpServletRequest req, HttpServletResponse resp,
-					@GPRequestParam("a") Integer a, @GPRequestParam("b") Integer b){
+					@HRequestParam("a") Integer a, @HRequestParam("b") Integer b){
 		try {
 			resp.getWriter().write(a + "+" + b + "=" + (a + b));
 		} catch (IOException e) {
@@ -39,9 +40,9 @@ public class DemoAction {
 		}
 	}
 
-	@GPRequestMapping("/sub")
+	@HRequestMapping("/sub")
 	public void sub(HttpServletRequest req, HttpServletResponse resp,
-					@GPRequestParam("a") Double a, @GPRequestParam("b") Double b){
+					@HRequestParam("a") Double a, @HRequestParam("b") Double b){
 		try {
 			resp.getWriter().write(a + "-" + b + "=" + (a - b));
 		} catch (IOException e) {
@@ -49,8 +50,8 @@ public class DemoAction {
 		}
 	}
 
-	@GPRequestMapping("/remove")
-	public String  remove(@GPRequestParam("id") Integer id){
+	@HRequestMapping("/remove")
+	public String  remove(@HRequestParam("id") Integer id){
 		return "" + id;
 	}
 

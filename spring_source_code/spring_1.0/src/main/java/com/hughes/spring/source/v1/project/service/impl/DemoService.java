@@ -1,13 +1,13 @@
 package com.hughes.spring.source.v1.project.service.impl;
 
 
-import com.hughes.spring.source.v1.framework.annotation.GPService;
+import com.hughes.spring.source.v1.framework.annotation.HService;
 import com.hughes.spring.source.v1.project.service.IDemoService;
 
 /**
  * 核心业务逻辑
  */
-@GPService
+@HService
 public class DemoService implements IDemoService {
 
 	public String get(String name) {

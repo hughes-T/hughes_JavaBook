@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  * @since 2021/9/28 0:02
  */
 
-public class HughesDispatcherServlet extends HttpServlet {
+public class HDispatcherServlet extends HttpServlet {
 
     private final Properties contextConfig = new Properties();
 
@@ -149,16 +149,16 @@ public class HughesDispatcherServlet extends HttpServlet {
         if (ioc.isEmpty()){return;}
         for (Map.Entry<String, Object> entry : ioc.entrySet()) {
             Class<?> clazz = entry.getValue().getClass();
-            if (!clazz.isAnnotationPresent(GPController.class)){continue;}
+            if (!clazz.isAnnotationPresent(HController.class)){continue;}
 
             String baseUrl = "";
-            if (clazz.isAnnotationPresent(GPRequestMapping.class)){
-                baseUrl = clazz.getAnnotation(GPRequestMapping.class).value();
+            if (clazz.isAnnotationPresent(HRequestMapping.class)){
+                baseUrl = clazz.getAnnotation(HRequestMapping.class).value();
             }
             //获取所有public方法
             for (Method method : clazz.getMethods()) {
-                if (!method.isAnnotationPresent(GPRequestMapping.class)){continue;}
-                GPRequestMapping requestMapping = method.getAnnotation(GPRequestMapping.class);
+                if (!method.isAnnotationPresent(HRequestMapping.class)){continue;}
+                HRequestMapping requestMapping = method.getAnnotation(HRequestMapping.class);
 //优化
                 // //demo///query
                 String regex = ("/" + baseUrl + "/" + requestMapping.value())
@@ -186,8 +186,8 @@ public class HughesDispatcherServlet extends HttpServlet {
         for (Map.Entry<String, Object> entry : ioc.entrySet()) {
             Class<?> clazz = entry.getValue().getClass();
             for (Field field : clazz.getDeclaredFields()) {
-                if (!field.isAnnotationPresent(GPAutowired.class)){continue;}
-                GPAutowired autowired = field.getAnnotation(GPAutowired.class);
+                if (!field.isAnnotationPresent(HAutowired.class)){continue;}
+                HAutowired autowired = field.getAnnotation(HAutowired.class);
                 String beanName = autowired.value().trim();
                 //没有自定义值则取接口类型
                 beanName = "".equals(beanName) ? field.getType().getName() : beanName;
@@ -212,15 +212,15 @@ public class HughesDispatcherServlet extends HttpServlet {
         try {
             for (String className : classNames) {
                 Class<?> clazz = Class.forName(className);
-                if (clazz.isAnnotationPresent(GPController.class)){
+                if (clazz.isAnnotationPresent(HController.class)){
                     Object instance = clazz.newInstance();
                     //Spring 默认首字母小写
                     String beanName = toLowerFirstCase(clazz.getSimpleName());
                     ioc.put(beanName,instance);
-                }else if (clazz.isAnnotationPresent(GPService.class)){
+                }else if (clazz.isAnnotationPresent(HService.class)){
                     Object instance = clazz.newInstance();
                     //自定义beanName
-                    GPService service = clazz.getAnnotation(GPService.class);
+                    HService service = clazz.getAnnotation(HService.class);
                     String beanName = service.value();
                     //首字母小写
                     if (!"".equals(beanName.trim())){
@@ -330,8 +330,8 @@ public class HughesDispatcherServlet extends HttpServlet {
 
             for (int i = 0; i < an2s.length; i++) {
                 for (Annotation an : an2s[i]) {
-                    if (an instanceof GPRequestParam){
-                        String paramName = ((GPRequestParam) an).value();
+                    if (an instanceof HRequestParam){
+                        String paramName = ((HRequestParam) an).value();
                         if (!"".equals(paramName)){
                             paramIndexMapping.put(paramName,i);
                         }

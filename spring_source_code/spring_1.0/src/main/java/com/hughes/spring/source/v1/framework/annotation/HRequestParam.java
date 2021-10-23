@@ -2,9 +2,9 @@ package com.hughes.spring.source.v1.framework.annotation;
 
 import java.lang.annotation.*;
 
-@Target({ElementType.FIELD})
+@Target({ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface GPAutowired {
+public @interface HRequestParam {
     String value() default "";
 }
