@@ -7,7 +7,7 @@ import com.hughes.spring.source.v2ioc.framework.beans.HBeanWrapper;
 import com.hughes.spring.source.v2ioc.framework.beans.config.HBeanDefinition;
 import com.hughes.spring.source.v2ioc.framework.beans.support.HBeanDefinitionReader;
 import com.hughes.spring.source.v2ioc.framework.beans.support.HDefaultListableBeanFactory;
-import com.hughes.spring.source.v2ioc.framework.core.HBeanFactory;
+import com.hughes.spring.source.v2ioc.framework.factory.HBeanFactory;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;

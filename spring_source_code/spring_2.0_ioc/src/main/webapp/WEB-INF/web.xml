@@ -7,7 +7,7 @@
 	<display-name>Gupao Web Application</display-name>
 	<servlet>
 		<servlet-name>gpmvc</servlet-name>
-		<servlet-class>com.hughes.spring.source.v2ioc.framework.servlet.HughesDispatcherServlet</servlet-class>
+		<servlet-class>com.hughes.spring.source.v2ioc.framework.servlet.HDispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>application.properties</param-value>

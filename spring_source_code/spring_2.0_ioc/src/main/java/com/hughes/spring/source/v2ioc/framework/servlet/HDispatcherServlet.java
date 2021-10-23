@@ -20,7 +20,7 @@ import java.util.regex.Pattern;
  * @since 2021/9/28 0:02
  */
 
-public class HughesDispatcherServlet extends HttpServlet {
+public class HDispatcherServlet extends HttpServlet {
 
 
     /**
@@ -150,16 +150,16 @@ public class HughesDispatcherServlet extends HttpServlet {
         for (String beanName : applicationContext.getBeanDefinitionNames()) {
             Object instance = applicationContext.getBean(beanName);
             Class<?> clazz = instance.getClass();
-            if (!clazz.isAnnotationPresent(GPController.class)){continue;}
+            if (!clazz.isAnnotationPresent(HController.class)){continue;}
 
             String baseUrl = "";
-            if (clazz.isAnnotationPresent(GPRequestMapping.class)){
-                baseUrl = clazz.getAnnotation(GPRequestMapping.class).value();
+            if (clazz.isAnnotationPresent(HRequestMapping.class)){
+                baseUrl = clazz.getAnnotation(HRequestMapping.class).value();
             }
             //获取所有public方法
             for (Method method : clazz.getMethods()) {
-                if (!method.isAnnotationPresent(GPRequestMapping.class)){continue;}
-                GPRequestMapping requestMapping = method.getAnnotation(GPRequestMapping.class);
+                if (!method.isAnnotationPresent(HRequestMapping.class)){continue;}
+                HRequestMapping requestMapping = method.getAnnotation(HRequestMapping.class);
 //优化
                 // //demo///query
                 String regex = ("/" + baseUrl + "/" + requestMapping.value())
@@ -213,8 +213,8 @@ public class HughesDispatcherServlet extends HttpServlet {
 
             for (int i = 0; i < an2s.length; i++) {
                 for (Annotation an : an2s[i]) {
-                    if (an instanceof GPRequestParam){
-                        String paramName = ((GPRequestParam) an).value();
+                    if (an instanceof HRequestParam){
+                        String paramName = ((HRequestParam) an).value();
                         if (!"".equals(paramName)){
                             paramIndexMapping.put(paramName,i);
                         }
