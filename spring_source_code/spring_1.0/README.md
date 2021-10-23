@@ -2,8 +2,8 @@
 
 ### 前置
 
-- 配置及分包参阅[源码]()
-- 核心类入口 HDispatcherServlet
+- 配置及分包参阅[源码](https://github.com/hughes-T/hughes_JavaBook/tree/dev/spring_source_code/spring_1.0/src/main/java/com/hughes/spring/source/v1)
+- 核心类入口 [HDispatcherServlet](https://github.com/hughes-T/hughes_JavaBook/blob/dev/spring_source_code/spring_1.0/src/main/java/com/hughes/spring/source/v1/framework/servlet/HDispatcherServlet.java)
 
 DispatcherServlet负责处理web端请求，本篇将其作为万能类快速体验spring 功能
 
@@ -28,7 +28,8 @@ DispatcherServlet负责处理web端请求，本篇将其作为万能类快速体
 
 ### 个人心得
 
-
+在一个类里面快速体验了Spring的实现，这帮助我们理解了Spring的运行流程：读取配置->扫描->加载->依赖注入->缓存路径映射；
+拓展思考，我们虽然完成了功能实现，但是DispatcherServlet作为委派类，为保证单一职责，后续将会一步步拆解出Ioc、Di、mvc等核心职责
 
 
 
