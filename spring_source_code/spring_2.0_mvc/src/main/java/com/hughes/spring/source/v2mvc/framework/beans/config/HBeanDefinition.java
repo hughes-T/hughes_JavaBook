@@ -14,6 +14,8 @@ public class HBeanDefinition {
 
     private String className;
 
+    public boolean isSingleton(){return true;}
+
     public HBeanDefinition(String beanName, String className) {
         this.beanName = beanName;
         this.className = className;

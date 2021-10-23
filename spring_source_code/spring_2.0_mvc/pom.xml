@@ -115,7 +115,7 @@
                     <contextPath>/</contextPath>
                     <connectors>
                         <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-                            <port>80</port>
+                            <port>85</port>
                         </connector>
                     </connectors>
                     <scanIntervalSeconds>0</scanIntervalSeconds>
@@ -202,6 +202,14 @@
                 </executions>
                 <version>1.0.5</version>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
+                </configuration>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
@@ -240,6 +248,5 @@
             </plugins>
         </pluginManagement>
     </build>
-
 
 </project>

@@ -2,9 +2,9 @@ package com.hughes.spring.source.v2mvc.framework.annotation;
 
 import java.lang.annotation.*;
 
-@Target({ElementType.TYPE})
+@Target({ElementType.TYPE,ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface GPService {
+public @interface HRequestMapping {
     String value() default "";
 }

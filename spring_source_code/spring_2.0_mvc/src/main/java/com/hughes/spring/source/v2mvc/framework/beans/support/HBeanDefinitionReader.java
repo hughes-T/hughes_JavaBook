@@ -35,9 +35,12 @@ public class HBeanDefinitionReader {
                 if (clazz.isInterface()){continue;}
                 //默认首字母大小写
                 String beanName = toLowerFirstCase(clazz.getSimpleName());
+//                String beanName = clazz.getName();
                 //有接口的情况
+
                 for (Class<?> anInterface : clazz.getInterfaces()) {
                     beanName = toLowerFirstCase(anInterface.getSimpleName());
+//                    beanName = anInterface.getName();
                 }
                 result.add(new HBeanDefinition(beanName,className));
             } catch (Exception e) {
@@ -89,4 +92,7 @@ public class HBeanDefinitionReader {
         return String.valueOf(chars);
     }
 
+    public Properties getConfig() {
+        return contextConfig;
+    }
 }
