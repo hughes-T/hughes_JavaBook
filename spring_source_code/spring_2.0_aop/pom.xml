@@ -3,21 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>hughes_JavaBook</artifactId>
+        <artifactId>spring_source_code</artifactId>
         <groupId>com.hughes</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <modules>
-        <module>spring_boot_annotation</module>
-        <module>spring_1.0</module>
-        <module>spring_2.0_ioc</module>
-        <module>spring_2.0_mvc</module>
-        <module>spring_2.0_di</module>
-        <module>spring_2.0_aop</module>
-    </modules>
-    <artifactId>spring_source_code</artifactId>
+
+    <artifactId>spring_2.0_aop</artifactId>
 
 
 </project>
