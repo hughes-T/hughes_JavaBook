@@ -8,6 +8,8 @@
         <module>design_pattren</module>
         <module>design_principles</module>
         <module>spring_source_code</module>
+        <module>mybatis_source_code</module>
+        <module>basic_core</module>
     </modules>
 
     <parent>

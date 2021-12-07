@@ -1,5 +1,12 @@
 # JAVA 体系知识学习总结
 
+### JAVA基础核心
+
+- [数据结构](basic_core/DataStructure.md)
+- 泛型
+- 反射
+- 注解
+
 ### 编码思想
 
 - [设计原则](design_principles/README.md)
@@ -13,3 +20,42 @@
 - 自定义框架
 
 ### 并发编程
+
+- 
+
+### 中间件
+
+- 深入解读Redis
+
+- RabbitMQ
+- Kafka
+- RocketMQ
+
+### 分布式协调
+
+- Zookeeper
+
+### 高性能网络通信
+
+- Netty
+
+- 
+
+### 微服务
+
+- Dubbo
+- Spring Cloud Netflix
+- Spring Cloud Alibaba
+
+### 性能调优
+
+- JVM
+- MYSQL
+- TOMCAT
+
+### 容器化云原生
+
+- Docker
+- K8S
+- Service MEsh
+- 云原生
