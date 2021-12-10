@@ -3,8 +3,7 @@
 ### JAVA基础核心
 
 - [数据结构](basic_core/DataStructure.md)
-- 泛型
-- 反射
+- [反射](basic_core/Reflection.md)
 - 注解
 
 ### 编码思想
