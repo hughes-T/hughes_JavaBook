@@ -24,7 +24,7 @@ public class ConnectRequestUtil {
 
 	private static RestTemplate restTemplate ;
 
-	@Resource
+//	@Resource
 	public static void setRestTemplate(RestTemplate restTemplate) {
 		ConnectRequestUtil.restTemplate = restTemplate;
 	}

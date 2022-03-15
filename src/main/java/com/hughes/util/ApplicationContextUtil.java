@@ -23,4 +23,6 @@ public class ApplicationContextUtil implements ApplicationContextAware {
         return applicationContext.getBean(requiredType);
     }
 
+    public static ApplicationContext getContext(){return applicationContext;}
+
 }

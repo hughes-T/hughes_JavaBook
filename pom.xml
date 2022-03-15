@@ -10,6 +10,7 @@
         <module>spring_source_code</module>
         <module>mybatis_source_code</module>
         <module>basic_core</module>
+        <module>concurrent</module>
     </modules>
 
     <parent>
