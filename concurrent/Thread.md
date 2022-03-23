@@ -212,3 +212,11 @@ doc 解释很到位
 
 ![thread_yield](../resources/image/thread_yield.png)
 
+### holdsLock
+
+static boolean holdsLock(Object obj); 该线程是否持有目标对象资源
+
+### getStackTrace
+
+获取线程的堆栈跟踪记录，记录了该线程的调用方法的历史，一般运行报错时日志打印的就是这个信息
+ 

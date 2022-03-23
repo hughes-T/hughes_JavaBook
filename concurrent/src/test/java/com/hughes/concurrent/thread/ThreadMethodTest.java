@@ -1,6 +1,7 @@
 package com.hughes.concurrent.thread;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -37,4 +38,20 @@ public class ThreadMethodTest {
         t1.start();
         t1.join();
     }
+
+    final byte[] lock = new byte[0];
+    @Test
+    public void testHoldsLockAndGetStackTrace(){
+        synchronized (lock){
+            Assert.assertTrue(Thread.holdsLock(lock));
+        }
+        getStackTrace();
+    }
+    private void getStackTrace(){
+        StackTraceElement[] stackTraceArray = Thread.currentThread().getStackTrace();
+        for (StackTraceElement stackTrace : stackTraceArray) {
+            log.info("stackTrace: {}", stackTrace);
+        }
+    }
+
 }
