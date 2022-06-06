@@ -17,4 +17,9 @@ public class ClassUtil {
         Type[] types = ((ParameterizedType) clazz.getGenericSuperclass()).getActualTypeArguments();
         return (Class<?>[]) types;
     }
+
+    public static Type[] getActualTypes(Class<?> clazz){
+        return ((ParameterizedType) clazz.getGenericSuperclass()).getActualTypeArguments();
+    }
+
 }

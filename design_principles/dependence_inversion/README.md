@@ -74,6 +74,33 @@ public class DiscernTaskHandler implements TaskHandler{
 }
 ```
 
+#### 场景优化2
+使用枚举和spring ioc 优化实现方式
+```java
+public interface ITaskHandlerWithEnum {
+
+    TaskHandlerType getType();
+
+    void handler();
+
+    static ITaskHandlerWithEnum getInstance(TaskHandlerType type){
+        ApplicationContext context = ApplicationContextUtil.getContext();
+        Map<String, ITaskHandlerWithEnum> beans = context.getBeansOfType(ITaskHandlerWithEnum.class);
+        for (Map.Entry<String, ITaskHandlerWithEnum> entry : beans.entrySet()) {
+            if (type.equals(entry.getValue().getType())){
+                return entry.getValue();
+            }
+        }
+        throw new RuntimeException(String.format("can not find %s instance", type.name()));
+    }
+
+    enum TaskHandlerType{
+        BEHAVIOR,DISCERN
+    }
+
+}
+```
+
 *如果你对于这个举例感到疑惑，并未看到优化带来的效果，请联想当一个系统的依赖层次很深时，每个上层受制于下层，带来牵一发而动全身的滋味可是很不好受的*
 
 ------

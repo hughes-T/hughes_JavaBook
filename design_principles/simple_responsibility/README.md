@@ -74,7 +74,7 @@ public interface IUserWriteDao {
 
 uml图
 
-![](..\..\resources\image\simple_reponsibility_interfaces_uml.jpg)
+![](../../resources/image/simple_reponsibility_interfaces_uml.jpg)
 
 #### Class
 
@@ -119,6 +119,7 @@ public class DiscernTaskHandler {
 
 - 单一职责原则能够降低类的复杂度，提高代码的可读性和系统的维护性
 - 若开发时偷懒造成的“万能类”、“万能方法”，在维护或变更时N倍的还回来，切莫短视
+- 随着项目的版本迭代，理想型的单一职责原则难以为继，将逻辑末枝拆分的过细导致了逻辑链的拉长，当末枝成长为枝干时，牵连了诸多结构又难以重构，是开发之中经常遇到的痛点。期望着将来随着接触的技术广度和深度增长时，能有新的感悟。
 
 
 

@@ -1,4 +1,4 @@
-package com.hughes.one2many;
+package com.hughes.one2many.v1;
 
 import com.hughes.util.ApplicationContextUtil;
 import org.springframework.context.ApplicationContext;

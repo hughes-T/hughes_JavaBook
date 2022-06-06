@@ -1,4 +1,4 @@
-package com.hughes.one2many.impl;
+package com.hughes.one2many.v1.impl;
 
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.hughes.one2many.impl;
+package com.hughes.one2many.v1.impl;
 
-import com.hughes.one2many.IEnumOne2ManyDemo;
+import com.hughes.one2many.v1.IEnumOne2ManyDemo;
 
 /*
  * @Description

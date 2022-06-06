@@ -1,4 +1,4 @@
-package com.hughes.one2many.impl;
+package com.hughes.one2many.v1.impl;
 
 import org.springframework.stereotype.Service;
 
@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
  * @Date 2022/3/15 20:03
  */
 @Service
-public class TwoImpl extends AbsImpl {
+public class ThreeImpl extends AbsImpl {
 
     @Override
     public final Type getType() {
-        return Type.TWO;
+        return Type.THREE;
     }
 
 }
